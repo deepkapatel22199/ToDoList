@@ -10,13 +10,22 @@ const ToDoList = ({
   onSaveEdit,
   editingId,
   editingText,
-  setEditingText
+  setEditingText,
+  onToggleComplete,
 }) => {
   return (
     <div className="todo-list-container">
       <ul className="todo-list">
         {tasks.map(task => (
-          <li className="todo-item" key={task.id}>
+          <li  
+          key={task.id}
+          className={`todo-item ${task.completed ? "completed" : ""}`}
+          >
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => onToggleComplete(task.id)} // ✅ Added
+            />
             {editingId === task.id ? (
               <>
                 <input

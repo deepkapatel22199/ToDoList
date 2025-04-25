@@ -13,9 +13,9 @@ const ToDoApp = () => {
       const newTask = {
         id: Date.now(),
         text,
+        completed: false,
       };
-    
-        console.log("Adding task:", newTask); 
+     
       setTasks([newTask, ...tasks]);
     }
   };
@@ -35,6 +35,13 @@ const ToDoApp = () => {
     setEditingText("");
   };
 
+  const toggleComplete = (id) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    );
+    setTasks(updatedTasks);
+  };
+
   return (
     <div className="todo-app">
       <ToDoForm onAddTask={addTask} />
@@ -46,6 +53,7 @@ const ToDoApp = () => {
         editingId={editingId}
         editingText={editingText}
         setEditingText={setEditingText}
+        onToggleComplete={toggleComplete}
       />
     </div>
   );
