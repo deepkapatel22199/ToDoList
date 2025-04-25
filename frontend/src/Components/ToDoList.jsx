@@ -3,31 +3,40 @@ import { MdDeleteOutline } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import "./ToDoList.css";
 
-const ToDoList = () => {
+const ToDoList = ({
+  tasks,
+  onDelete,
+  onStartEdit,
+  onSaveEdit,
+  editingId,
+  editingText,
+  setEditingText
+}) => {
   return (
     <div className="todo-list-container">
-        <ul className="todo-list">
-            <li className="todo-item">
-            <span className="task-text">Learn React</span>
-            <div className="task-edit-delete">
-                <button className="delete-btn"><FaEdit /></button>
-                <button className="delete-btn"><MdDeleteOutline /></button>
-            </div>
-        </li>
-        <li className="todo-item">
-          <span className="task-text">Build a To Do App</span>
-          <div className="task-edit-delete">
-                <button className="delete-btn"><FaEdit /></button>
-                <button className="delete-btn"><MdDeleteOutline /></button>
-            </div>
-        </li>
-        <li className="todo-item">
-          <span className="task-text">Style the UI</span>
-            <div className="task-edit-delete">
-                <button className="delete-btn"><FaEdit /></button>
-                <button className="delete-btn"><MdDeleteOutline /></button>
-            </div>
-        </li>
+      <ul className="todo-list">
+        {tasks.map(task => (
+          <li className="todo-item" key={task.id}>
+            {editingId === task.id ? (
+              <>
+                <input
+                  className="edit-input"
+                  value={editingText}
+                  onChange={(e) => setEditingText(e.target.value)}
+                />
+                <button className="save-btn" onClick={() => onSaveEdit(task.id, editingText)}>Save</button>
+              </>
+            ) : (
+              <>
+                <span className="task-text">{task.text}</span>
+                <div className="task-edit-delete">
+                  <button className="edit-btn" onClick={() => onStartEdit(task.id, task.text)}><FaEdit /></button>
+                  <button className="delete-btn" onClick={() => onDelete(task.id)}><MdDeleteOutline /></button>
+                </div>
+              </>
+            )}
+          </li>
+        ))}
       </ul>
     </div>
   );
