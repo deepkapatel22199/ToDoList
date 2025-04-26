@@ -14,7 +14,7 @@ const ToDoApp = () => {
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
-  
+
   const addTask = (text) => {
     if (text.trim()) {
       const newTask = {
@@ -49,6 +49,15 @@ const ToDoApp = () => {
     setTasks(updatedTasks);
   };
 
+  const togglePin = (id) => {
+    setTasks(prev =>
+      prev.map(task =>
+        task.id === id ? { ...task, pinned: !task.pinned } : task
+      )
+    );
+  };
+
+  
   return (
     <div className="todo-app">
       <ToDoForm onAddTask={addTask} />
@@ -61,6 +70,7 @@ const ToDoApp = () => {
         editingText={editingText}
         setEditingText={setEditingText}
         onToggleComplete={toggleComplete}
+        togglePin={togglePin}
       />
     </div>
   );

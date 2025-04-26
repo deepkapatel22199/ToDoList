@@ -34,7 +34,7 @@
     color: #333;
   }
   
-  .delete-btn ,.edit-btn{
+  .delete-btn ,.edit-btn, .pin-btn {
     background-color: transparent;
     border: none;
     font-size: 1.2rem;
@@ -61,7 +61,7 @@
   .save-btn:hover {
     background-color: #072e91;
   }
-  .delete-btn:hover, .edit-btn:hover {
+  .delete-btn:hover, .edit-btn:hover, .pin-btn:hover {
     transform: scale(1.2);
   }
   .task-edit-delete {
@@ -81,3 +81,22 @@
   .todo-item input[type="checkbox"] {
     margin-right: 10px;
   }
+
+  .todo-item.pinned {
+    background-color: #fff9e6;
+    border-left: 4px solid #f39c12;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .todo-item {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+  }
+
+  
