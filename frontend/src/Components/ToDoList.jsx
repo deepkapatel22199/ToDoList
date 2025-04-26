@@ -24,7 +24,7 @@ const ToDoList = ({
             <input
               type="checkbox"
               checked={task.completed}
-              onChange={() => onToggleComplete(task.id)} // ✅ Added
+              onChange={() => onToggleComplete(task.id)} 
             />
             {editingId === task.id ? (
               <>

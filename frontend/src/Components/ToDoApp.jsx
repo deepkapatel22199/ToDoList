@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 import "./ToDoApp.css";
 
 const ToDoApp = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const stored = localStorage.getItem("tasks");
+    return stored ? JSON.parse(stored) : [];
+  });
   const [editingId, setEditingId] = useState(null);
   const [editingText, setEditingText] = useState("");
 
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+  
   const addTask = (text) => {
     if (text.trim()) {
       const newTask = {
