@@ -10,6 +10,7 @@ const ToDoApp = () => {
   });
   const [editingId, setEditingId] = useState(null);
   const [editingText, setEditingText] = useState("");
+  
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));

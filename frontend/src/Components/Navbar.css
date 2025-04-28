@@ -1,76 +1,11 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #4b6cb7; /* Blue gradient base */
+    background-color: #4b6cb7; 
     background-image: linear-gradient(to right, #182848, #4b6cb7);
     color: white;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    
   }
 
-  .navbar__left {
-    display: flex;
-    align-items: center;
-  }
   
-  .navbar__logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-right: 2rem;
-  }
-  
-  .navbar__links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .navbar__links li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar__links li a:hover {
-    color: #ffd166;
-  }
-
-  .navbar__search {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .navbar__search input {
-    padding: 8px 14px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    width: 180px;
-    transition: width 0.3s ease;
-  }
-  
-  .navbar__search input:focus {
-    width: 250px;
-  }
-  
-  .navbar__search button {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 20px;
-    background-color: #ffd166;
-    color: #182848;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .navbar__search button:hover {
-    background-color: #ffc93c;
-  }
