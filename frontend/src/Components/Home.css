@@ -1,51 +1,188 @@
-/* Overall page container */
+/* Home Page Styling */
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f7f7f7;
-    font-family: Arial, sans-serif;
     text-align: center;
-    padding: 2rem;
-    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   }
   
-  /* Main heading */
   .home-container h1 {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
   }
   
-  /* Paragraph text below heading */
   .home-container p {
     font-size: 1.2rem;
     color: #555;
-    margin-bottom: 2rem;
-    max-width: 600px;
-    line-height: 1.6;
+    margin-bottom: 40px;
   }
   
-  /* Button styling */
   .AddToDoList-btn {
-    background-color: #4CAF50;
+    background-color: #6c5ce7;
     color: white;
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
     border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
   
-  /* Button hover effect */
   .AddToDoList-btn:hover {
-    background-color: #45a049;
+    background-color: #4e33b6;
   }
   
-  .AddToDoList-btn:focus {
-    outline: none;
+  /* Modal Styling */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .add-task-btn {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.7s;
+  }
+  
+  .add-task-btn:hover {
+    background-color: #4e33b6;
+  }
+  
+  .task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .task-list li {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-list li.completed {
+    text-decoration: line-through;
+    background-color: #d3f9d8;
+  }
+  
+  .task-list input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .edit-task-btn,
+  .delete-task-btn {
+    background: none;
+    border: none;
+    color: #6c5ce7;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .edit-task-btn:hover,
+  .delete-task-btn:hover {
+    color: #4e33b6;
+  }
+  
+  .no-tasks {
+    color: #888;
+    font-size: 1.1rem;
+    padding: 20px 0;
+  }
+  
+  /* Modal Actions */
+  .modal-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .create-list-btn,
+  .close-modal-btn {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .create-list-btn:hover,
+  .close-modal-btn:hover {
+    background-color: #4e33b6;
   }
   
