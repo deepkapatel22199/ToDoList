@@ -1,8 +1,4 @@
 import React from "react";
-import { MdDeleteOutline } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
-import { MdOutlinePushPin } from "react-icons/md";
-import { motion } from "framer-motion";
 import "./ToDoList.css";
 
 const ToDoList = () => {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ToDoForm from "./ToDoForm";
 import ToDoList from "./ToDoList";
 import "./ToDoApp.css";
 
@@ -61,7 +60,6 @@ const ToDoApp = () => {
   
   return (
     <div className="todo-app">
-      <ToDoForm onAddTask={addTask} />
       <ToDoList
         tasks={tasks}
         onDelete={deleteTask}
