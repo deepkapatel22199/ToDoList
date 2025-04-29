@@ -87,6 +87,12 @@
   
   .edit-task-item button {
     background-color: #e74c3c;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;    
+    transition: background-color 0.2s;
   }
   
   .edit-task-item button:hover {
