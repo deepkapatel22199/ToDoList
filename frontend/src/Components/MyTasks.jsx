@@ -62,7 +62,13 @@ const MyTasks = () => {
     updatedTasks.splice(taskIndex, 1);
     setEditedTasks(updatedTasks);
   };
-
+  const handleShare = (listId) => {
+    const shareUrl = `${window.location.origin}/shared?id=${listId}`;
+    navigator.clipboard.writeText(shareUrl)
+      .then(() => alert('Shareable link copied to clipboard!'))
+      .catch(err => console.error('Failed to copy: ', err));
+  };
+  
   return (
     <div className="mytasks-container">
       <h1>My Tasks</h1>
@@ -125,6 +131,7 @@ const MyTasks = () => {
                 <div className="list-actions">
                   <button onClick={() => handleEdit(index)}>Edit</button>
                   <button onClick={() => handleDelete(index)}>Delete</button>
+                  <button onClick={() => handleShare(list.id)}>Share</button>
                 </div>
               </>
             )}
