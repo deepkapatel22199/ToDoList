@@ -104,11 +104,22 @@ const MyTasks = () => {
               <>
                 <h2>{list.heading}</h2>
                 <ul>
-                  {list.tasks.map((task, taskIndex) => (
-                    <li key={taskIndex} className={task.completed ? "completed" : ""}>
-                      {task.taskName}
-                    </li>
-                  ))}
+                {list.tasks.map((task, taskIndex) => (
+  <li key={task.id} className={task.completed ? "completed" : ""}>
+    <input
+      type="checkbox"
+      checked={task.completed}
+      onChange={() => {
+        const updatedLists = [...lists];
+        updatedLists[index].tasks[taskIndex].completed = !task.completed;
+        setLists(updatedLists);
+        saveToLocalStorage(updatedLists);
+      }}
+    />
+    {task.taskName}
+  </li>
+))}
+
                 </ul>
 
                 <div className="list-actions">

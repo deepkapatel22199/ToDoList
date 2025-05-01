@@ -94,15 +94,27 @@ const Home = () => {
             </div>
 
             <ul className="task-list">
-              {tasks.length > 0 ? (
-                tasks.map((task) => (
-                  <li key={task.id} className={task.completed ? "completed" : ""}>
-                    {task.taskName}
-                  </li>
-                ))
-              ) : (
-                <li className="no-tasks">No tasks added yet!</li>
-              )}
+            {
+            tasks.length > 0 ? (
+            tasks.map((task) => (
+            <li key={task.id} className={task.completed ? "completed" : ""}>
+              <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => {
+              const updated = tasks.map(t =>
+                t.id === task.id ? { ...t, completed: !t.completed } : t
+              );
+              setTasks(updated);
+            }}  
+          />
+            {task.taskName}
+          </li>
+        ))
+      ) : (
+        <li className="no-tasks">No tasks added yet!</li>
+        )}
+
             </ul>
 
             <div className="modal-actions">
